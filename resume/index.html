@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joe Stadler — IT &amp; DevOps Engineer</title>
+  <meta name="description" content="Resume of Joe Stadler, IT and DevOps Engineer based in Scottsdale, Arizona.">
+  <link rel="icon" type="image/svg+xml" href="/resume/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg-primary: #0f172a;
+      --bg-secondary: #1e293b;
+      --bg-card: #162032;
+      --text-primary: #e2e8f0;
+      --text-secondary: #94a3b8;
+      --text-heading: #f1f5f9;
+      --accent: #38bdf8;
+      --accent-dim: rgba(56, 189, 248, 0.12);
+      --border: #293548;
+      --divider: #1e3a5f;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem 4rem;
+    }
+
+    /* ---- Header ---- */
+    .header {
+      position: relative;
+      padding: 3rem 0 2.5rem;
+      margin-bottom: 2.5rem;
+      background: linear-gradient(135deg, rgba(56, 189, 248, 0.06) 0%, rgba(129, 140, 248, 0.04) 100%);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+    }
+
+    .header-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .header h1 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      letter-spacing: -0.025em;
+      margin-bottom: 0.25rem;
+    }
+
+    .header .title {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .header .location {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .header .summary {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-top: 1.25rem;
+      max-width: 640px;
+    }
+
+    /* ---- Sections ---- */
+    .section {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ---- Job Block ---- */
+    .job {
+      margin-bottom: 2.25rem;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      margin-bottom: 0.75rem;
+    }
+
+    .job-title {
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text-heading);
+    }
+
+    .job-company {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-top: 0.125rem;
+    }
+
+    .job-company strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .job-summary {
+      font-size: 0.925rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.65;
+    }
+
+    .job-category {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .job ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .job li {
+      position: relative;
+      padding-left: 1.125rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .job li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.625rem;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      opacity: 0.6;
+    }
+
+    /* ---- Sub-role (tiered positions) ---- */
+    .sub-role {
+      margin-top: 1.25rem;
+    }
+
+    .sub-role-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-heading);
+      margin-bottom: 0.125rem;
+    }
+
+    .sub-role-dates {
+      font-size: 0.825rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .sub-role ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .sub-role li {
+      position: relative;
+      padding-left: 1.125rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .sub-role li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.625rem;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background-color: var(--accent);
+      opacity: 0.6;
+    }
+
+    /* ---- Divider between jobs ---- */
+    .job-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2.25rem 0;
+    }
+
+    /* ---- Skills ---- */
+    .skills-group {
+      margin-bottom: 1rem;
+    }
+
+    .skills-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-label {
+      font-size: 0.825rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      background: var(--accent-dim);
+      border: 1px solid rgba(56, 189, 248, 0.15);
+      border-radius: 4px;
+      padding: 0.2rem 0.6rem;
+      white-space: nowrap;
+    }
+
+    /* ---- Responsive ---- */
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 1.25rem 3rem;
+      }
+
+      .header {
+        padding: 2rem 1.25rem 2rem;
+      }
+
+      .header h1 {
+        font-size: 1.75rem;
+      }
+
+      .header .title {
+        font-size: 1rem;
+      }
+
+      .job-title {
+        font-size: 1rem;
+      }
+
+      .sub-role-title {
+        font-size: 0.9rem;
+      }
+    }
+
+    /* ---- Print ---- */
+    @media print {
+      :root {
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --bg-card: #ffffff;
+        --text-primary: #1e293b;
+        --text-secondary: #475569;
+        --text-heading: #0f172a;
+        --accent: #0369a1;
+        --accent-dim: rgba(3, 105, 161, 0.08);
+        --border: #e2e8f0;
+      }
+
+      body {
+        background: #ffffff;
+        color: #1e293b;
+        font-size: 11pt;
+        line-height: 1.5;
+      }
+
+      .container {
+        max-width: 100%;
+        padding: 0;
+      }
+
+      .header {
+        padding: 0.5rem 0 1rem;
+        margin-bottom: 1.5rem;
+        background: none;
+      }
+
+      .header::before {
+        display: none;
+      }
+
+      .header h1 {
+        font-size: 20pt;
+      }
+
+      .section {
+        margin-bottom: 1.5rem;
+      }
+
+      .section-title {
+        margin-bottom: 1rem;
+      }
+
+      .job {
+        margin-bottom: 1.25rem;
+      }
+
+      .job-divider {
+        margin: 1.25rem 0;
+      }
+
+      .skill-tag {
+        border-color: #cbd5e1;
+        background: #f1f5f9;
+        color: #334155;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <h1>Joe Stadler</h1>
+      <div class="title">IT &amp; DevOps Engineer</div>
+      <div class="location">Scottsdale, Arizona</div>
+      <p class="summary">IT and DevOps engineer with 17+ years in technical support, infrastructure, and cloud operations. Sole IT engineer at DeMark Analytics, managing all company infrastructure while contributing to the DevOps team supporting product development. Experience managing the full infrastructure lifecycle: from on-premises to cloud-managed services, building CI/CD pipelines, and operating Kubernetes workloads on AWS.</p>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title">Experience</h2>
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">IT &amp; DevOps Engineer</div>
+          <div class="job-company"><strong>DeMark Analytics LLC</strong> &mdash; Oct 2016 &ndash; Present</div>
+        </div>
+        <p class="job-summary">~20-person financial analytics software company based in Scottsdale, AZ.</p>
+
+        <div class="job-category">IT &amp; Infrastructure</div>
+        <ul>
+          <li>Migrated from on-premises Windows Server domain controllers and VMware/vCenter environment to cloud-managed services, decommissioning all on-premises servers</li>
+          <li>Implemented SSO via Microsoft Entra ID across company services, migrated VPN authentication to SAML with conditional access policies, and rolled out MFA for Microsoft 365</li>
+          <li>Implemented SPF, DKIM, and DMARC on company email domains; deployed Barracuda Email Essentials, later migrated to Microsoft Defender</li>
+          <li>Migrated phone system from on-premises Avaya IP Office to cloud-hosted 8x8, supporting remote and hybrid work</li>
+          <li>Deployed Ruckus wireless APs with segmented SSIDs; corporate network authentication integrated with Microsoft Entra ID and Wi-Fi profiles distributed via Intune</li>
+          <li>Administer on-premises network including SonicWall firewall/DHCP, DNSmasq DNS forwarding, and Route 53 for internal DNS resolution</li>
+          <li>Provision and manage employee devices through Microsoft Intune and Windows Autopilot, with Apple Business Manager for Mac enrollment</li>
+          <li>Oversee software licensing and vendor relationships across all company tools and services</li>
+          <li>Manage all company IT infrastructure, networking, and help desk</li>
+        </ul>
+
+        <div class="job-category">DevOps &amp; Cloud</div>
+        <ul>
+          <li>Build and maintain CI/CD pipelines in Jenkins; migrating to GitOps with the Argo ecosystem</li>
+          <li>Implemented External Secrets Operator with AWS Secrets Manager as part of the Argo migration</li>
+          <li>Added Trivy dependency scanning with security gates to CI pipelines</li>
+          <li>Build and maintain an internal CLI tool for managing Flagsmith feature flags across environments, integrated into CI/CD pipelines</li>
+          <li>Built PR preview environments for microfrontends using CloudFront and Flagsmith feature flags</li>
+          <li>Build and maintain Slack notification bots for Argo deployments, Jenkins builds, AMI update alerts, and infrastructure monitoring</li>
+          <li>Built automation jobs including Zendesk KB article sync for the product AI chatbot and Flagsmith feature flag snapshots to S3 with CDN cache invalidation</li>
+          <li>Deployed AWS Controllers for Kubernetes to manage AWS resources from within the cluster</li>
+          <li>Converted legacy unmanaged EC2 instances to Packer-built AMIs deployed with Terraform</li>
+          <li>Evolved SSL certificate management from manually distributed internal CA to automated issuance with cert-manager in Kubernetes and AWS Certificate Manager</li>
+          <li>Migrated from self-hosted GitHub to GitHub.com; deployed Gitea within our private AWS infrastructure for workloads requiring network-isolated source control</li>
+          <li>Administer GitHub organization including access control, repository and branch policies, Copilot configuration, and webhook integrations</li>
+          <li>Migrated self-hosted Atlassian suite to Atlassian Cloud, eliminating hosting overhead and simplifying access for users</li>
+          <li>Migrated container images from JFrog Artifactory to Amazon ECR; migrated package registry from Artifactory to AWS CodeArtifact</li>
+          <li>Maintain multiple Kubernetes clusters across production and non-production environments</li>
+        </ul>
+      </div>
+
+      <hr class="job-divider">
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">Technical Support Engineer (Tier 1 &rarr; Tier 3)</div>
+          <div class="job-company"><strong>Endurance International Group</strong> &mdash; Tempe, AZ &mdash; Mar 2013 &ndash; Sep 2016</div>
+        </div>
+        <p class="job-summary">
+          Progressed through three tiers of technical support over 3.5 years at a web hosting company. Diagnosed and escalated critical system issues to engineering teams, coordinated with third-party vendors, and supported high-profile customer escalations. Hands-on Linux and Bash experience gained here laid the foundation for a career in infrastructure and DevOps.
+        </p>
+      </div>
+
+      <hr class="job-divider">
+
+      <div class="job">
+        <div class="job-header">
+          <div class="job-title">iOS Advisor &rarr; Senior Advisor</div>
+          <div class="job-company"><strong>Apple</strong> &mdash; Phoenix, AZ &mdash; Oct 2008 &ndash; Aug 2012</div>
+        </div>
+        <p class="job-summary">
+          Started as seasonal iPod support contractor (Volt), converted to full-time Apple employee. Provided Tier 2 iOS support, led peer mentor program, coaching rotating groups of mentors supporting incoming advisors. Received AppleCare Excellence Award for outstanding metrics.
+        </p>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section">
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-group">
+        <div class="skills-label">Infrastructure &amp; Networking</div>
+        <div class="skills-list">
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">SonicWall</span>
+          <span class="skill-tag">DNSmasq</span>
+          <span class="skill-tag">Ruckus</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-label">Cloud &amp; DevOps</div>
+        <div class="skills-list">
+          <span class="skill-tag">AWS</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">kops</span>
+          <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Terraform</span>
+          <span class="skill-tag">Packer</span>
+          <span class="skill-tag">Ansible</span>
+          <span class="skill-tag">Jenkins</span>
+          <span class="skill-tag">Argo Ecosystem</span>
+          <span class="skill-tag">Helm</span>
+          <span class="skill-tag">Kustomize</span>
+          <span class="skill-tag">Prometheus</span>
+          <span class="skill-tag">Grafana</span>
+          <span class="skill-tag">Loki</span>
+          <span class="skill-tag">GitHub / Gitea Administration</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-label">Identity &amp; SSO</div>
+        <div class="skills-list">
+          <span class="skill-tag">Microsoft Entra ID</span>
+          <span class="skill-tag">SAML / OAuth / SSO</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-label">Endpoint &amp; Device Management</div>
+        <div class="skills-list">
+          <span class="skill-tag">Microsoft Intune</span>
+          <span class="skill-tag">Microsoft 365</span>
+          <span class="skill-tag">Microsoft Defender</span>
+          <span class="skill-tag">Windows Autopilot</span>
+          <span class="skill-tag">Apple Business Manager</span>
+        </div>
+      </div>
+
+      <div class="skills-group">
+        <div class="skills-label">Languages</div>
+        <div class="skills-list">
+          <span class="skill-tag">Bash</span>
+          <span class="skill-tag">Groovy</span>
+          <span class="skill-tag">TypeScript</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</body>
+</html>
